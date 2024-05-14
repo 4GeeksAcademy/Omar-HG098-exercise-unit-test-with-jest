@@ -6,6 +6,21 @@ const fromEuroToDollar = function(valueInEuro) {
     return valueInDollar;
 }
 
+const fromDollarToYen = function(valueInDollar) {
+    // Convert the given valueInEuro to dollars
+    let valueInYen = valueInDollar * oneEuroIs.USD * oneEuroIs.JPY;
+    // return the dollar value
+    return valueInYen;
+}
+
+const fromYenToPound = function(valueYen) {
+    // Convert the given valueInEuro to dollars
+    let valueInPound = Math.round(valueYen / oneEuroIs.JPY * oneEuroIs.GBP);
+    // return the dollar value
+    return valueInPound;
+}
+
+
 // app.js file content
 const sum = (a,b) =>{
     return a + b;
@@ -15,7 +30,7 @@ const sum = (a,b) =>{
 console.log(sum(7,3)) 
 
 //Export the function
-module.exports = {sum, fromEuroToDollar};
+module.exports = {sum, fromEuroToDollar, fromDollarToYen, fromYenToPound};
 
 // One euro is:
 let oneEuroIs = {
